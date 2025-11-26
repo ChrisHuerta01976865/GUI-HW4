@@ -1,0 +1,146 @@
+/* 
+ File: style.css
+ GUI Assignment: Dynamic multiplication table
+ Christopher Huerta
+ 11/26/25
+this provides the css styling for my dynamic table and the input fields i have on my webpage
+also now has the tabs part added
+ */
+
+
+ /* Limit width of the tab header bar and allow horizontal scroll */
+
+body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 2rem;
+    background: #F5E1FD;
+}
+
+/* styling for .card */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    min-width: 280px;
+    max-width: 320px;
+    height: fit-content;
+}
+
+
+
+.input-group-text {
+    min-width: 130px;
+    justify-content: center;
+    border: none;
+}
+
+
+.form-control {
+    border: 1px solid #dee2e6;
+    box-shadow: none !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* updates input box to have a blue border */
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+/* updates input box when an invalid input is attempted */
+.is-invalid {
+    border-color: #dc3545 !important;
+    background-color: #fff0f0 !important;
+}
+
+.invalid-feedback {
+    font-size: 0.875rem;
+}
+
+
+.btn-primary {
+    background: linear-gradient(90deg, #007bff 0%, #0056d2 100%);
+    border: none;
+    font-weight: 600;
+}
+
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 400px;
+    max-width: 90%;
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+/*  */
+#tableContainer {
+    flex: 1;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow-x: auto; /* adds horizontal scroll for x overflow */
+    overflow-y: auto; /* adds vertical scroll for y overflow */
+    padding: 1rem;
+}
+
+/*  adds blue header to the table */
+table th {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: 600;
+}
+
+/* table styling */
+table td, th {
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* alternating row color */
+table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* adjust input field and table layout when screen is minimized */
+@media (max-width: 992px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #tableContainer {
+    max-width: 95vw;
+  }
+}
+
+/*set up tabs like tablecontainer to keep it from taking over the whole screen*/
+#tabs{
+    flex: 1;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+/* positionging for the close X button */
+#tabs .ui-icon-close {
+    float: right;
+    margin-left: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+/* positing for the checkbox */
+#tabs .tab-select-checkbox {
+    margin-right: 6px;
+    transform: translateY(8px); 
+}
